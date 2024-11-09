@@ -1,0 +1,70 @@
+{% extends 'base_unregistered.html' %}
+{% load static %}
+
+{% block content %}
+<div class="row">
+
+    <div class="d-flex gap-3 align-items-center">
+        <h1>New Questions</h1>
+        <a href="#">Hot Questions</a>
+    </div>
+
+    <div class="row">
+        <div class="col-9">
+            <div class="d-flex flex-column gap-3">
+                {% for question in questions %}
+                <article class="card w-100" style="width: 18rem;">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-3">
+                                <div class="border mb-2" style="height: 100px">
+                                    <img alt="Avatar" class="img-fluid" src="{% static 'img/duck.jpg' %}">
+                                </div>
+                                <input aria-label="default input example" class="form-control"
+                                       placeholder="Default input" type="number"
+                                       value="5">
+                            </div>
+
+                            <div class="col-9">
+                                <h5 class="card-title">
+                                    <a href="/question.html">{{ question.title }}</a>
+                                </h5>
+                                <p class="card-text">{{ question.text }}</p>
+
+                                <div class="d-flex gap-5">
+                                    <a class="card-link" href="#">Answer (3)</a>
+                                    <div>
+                                        Tags:
+                                        <a class="card-link" href="#">Another link</a>
+                                        <a class="card-link" href="#">Another link</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+
+            <nav aria-label="page navi" class="mt-3">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a aria-label="Previous" class="page-link" href="#">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">...</a></li>
+                    <li class="page-item"><a class="page-link" href="#">53</a></li>
+
+                    <li class="page-item">
+                        <a aria-label="Next" class="page-link" href="#">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        {% endblock %}

@@ -19,6 +19,14 @@
             margin-right: 20px;
         }
 
+        .card-title {
+          color: blue;
+        }
+
+        .log-in-link {
+            margin-right: 10px;
+        }
+
         .navbar-brand {
             padding-left: 40px;
             font-size: 30px;
@@ -32,6 +40,34 @@
             padding-right: 100px;
         }
 
+        .img-fluid {
+            object-fit: contain;
+            max-height: 100%;
+            max-width: 100%;
+            transform: translateX(50%);
+        }
+
+        .input-title {
+            margin-left: 31px;
+            width: 80%;
+        }
+
+        .input-text {
+            margin-left: 33px;
+            width: 80%;
+            height: 300px;
+        }
+
+        .input-tags {
+            margin-left: 30px;
+            width: 80%;
+        }
+
+        .btn-success {
+            border: none;
+            margin-left: 60px;
+            width: 80px;
+        }
     </style>
 </head>
 
@@ -39,16 +75,14 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
         <div class="d-flex w-100 justify-content-between align-items-center">
-            <a class="navbar-brand" href="#">AskStepanova</a>
 
-            <button class="navbar-toggler" data-bs-toggle="collapse" type="button"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+            <div class="d-flex gap-1">
+                <a class="navbar-brand" href="#">AskStepanova</a>
+                <input aria-label="Search" class="form-control me-2" placeholder="Search" type="search">
+
+            </div>
 
             <form class="d-flex" role="search">
-                <input aria-label="Search" class="form-control me-2" placeholder="Search" type="search">
                 <button class="btn btn-outline-success" type="submit">Ask!</button>
             </form>
 
@@ -67,12 +101,9 @@
 <hr width="100%"/>
 
 <main class="container mt-3">
-    <div class="row">
-        <div class="col-9">
-            <div class="d-flex flex-column gap-3">
+    {% block content %}
 
-            </div>
-        </div>
+    {% endblock %}
 
         <div class="col">
             <section class="pop-tags">
@@ -88,6 +119,7 @@
                     <span class="badge text-bg-light">Firefox</span>
                 </div>
             </section>
+            <br>
 
             <section>
                 <h2>Best members</h2>
