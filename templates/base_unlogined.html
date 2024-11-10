@@ -10,21 +10,26 @@
             crossorigin="anonymous">
 
     <style>
+        .hot-ref {
+            margin-top: 15px;
+        }
+
         .btn-outline-success {
           background: green;
           color: white;
+          width: 100px;
         }
 
         .log-in-link {
             margin-right: 20px;
         }
 
-        .card-title {
-          color: blue;
+        .log-in-link-link {
+            margin-right: 10px;
         }
 
-        .log-in-link {
-            margin-right: 10px;
+        .card-title {
+          color: blue;
         }
 
         .navbar-brand {
@@ -66,7 +71,51 @@
         .btn-success {
             border: none;
             margin-left: 60px;
-            width: 80px;
+            width: 100px;
+        }
+
+        .col-sm-10 {
+            width: 200px;
+        }
+
+        .signup-login-form {
+            width: 400px;
+            margin-left: 96px;
+        }
+
+        .signup-email-form {
+            margin-left: 38px;
+            width: 400px;
+        }
+
+        .signup-nickname-form {
+            margin-left: 65px;
+            width: 400px;
+        }
+
+        .signup-repeat-password-form {
+            margin-left: 16px;
+            width: 400px;
+        }
+
+        .signup-password-form {
+            width: 400px;
+            margin-left: 70px;
+        }
+
+        .upload {
+            width: 400px;
+            margin-left: 38px;
+        }
+
+
+        .login-form {
+            margin-left: 27px;
+            width: 300px;
+        }
+
+        .password-form {
+            width: 300px;
         }
     </style>
 </head>
@@ -101,39 +150,12 @@
 <hr width="100%"/>
 
 <main class="container mt-3">
-    {% block content %}
 
+    {% block content %}
     {% endblock %}
 
-        <div class="col">
-            <section class="pop-tags">
-                <h2>Popular Tags</h2>
-                <div>
-                    <span class="badge text-bg-light">perl</span>
-                    <span class="badge text-bg-light">Python</span>
-                    <span class="badge text-bg-light">TechnoPark</span>
-                    <span class="badge text-bg-light">MySQL</span>
-                    <span class="badge text-bg-light">django</span>
-                    <span class="badge text-bg-light">UFO</span>
-                    <span class="badge text-bg-light">Cats</span>
-                    <span class="badge text-bg-light">Firefox</span>
-                </div>
-            </section>
-            <br>
+    {% include 'include/pop_tags_templ.html' %}
 
-            <section>
-                <h2>Best members</h2>
-                <div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><a href="#">Mr.Freeman</a></li>
-                        <li class="list-group-item"><a href="#">Dr.House</a></li>
-                        <li class="list-group-item"><a href="#">Bender</a></li>
-                        <li class="list-group-item"><a href="#">Queen Victoria</a></li>
-                        <li class="list-group-item"><a href="#">A.Stepanova</a></li>
-                    </ul>
-                </div>
-            </section>
-        </div>
     </div>
 
 </main>

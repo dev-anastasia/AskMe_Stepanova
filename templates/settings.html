@@ -1,0 +1,69 @@
+{% extends 'base_logined.html' %}
+{% load static %}
+
+{% block content %}
+<div class="row">
+    <div class="col-9">
+
+        <h1>Settings: Ana Stepanova</h1>
+
+        <div class="row">
+            <div class="d-flex flex-column gap-3">
+
+                <form action="submit" onsubmit="return checkForm()">
+                    <br>
+                    <div class="row g-3 align-items-center">
+                        <div class="col-auto">
+                            <label for="input-login" class="col-sm-2 col-form-label">Login</label>
+                        </div>
+                        <div class="col-auto">
+                            <input type="text" class="form-control login-form" id="input-login"
+                                   placeholder="Enter your login here" required="required" minlength="1">
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="row g-3 align-items-center">
+                        <div class="col-auto">
+                            <label for="input-email" class="form-label">Email address</label>
+                        </div>
+                        <div class="col-auto">
+                            <input type="email" class="form-control email-form" id="input-email"
+                                   placeholder="Enter your email here" required="required">
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="row g-3 align-items-center">
+                        <div class="col-auto">
+                            <label for="input-nickname" class="col-sm-2 col-form-label">Nickname</label>
+                        </div>
+                        <div class="col-auto">
+                            <input type="text" class="form-control nickname-form" id="input-nickname"
+                                   placeholder="Enter your nickname here" required="required" minlength="1">
+                        </div>
+                    </div>
+                    <br>
+
+                    <img alt="Avatar" class="settings-avatar" src="{% static 'img/duck.jpg' %}">
+
+                    <div class="row g-3 align-items-center">
+                        <div class="col-auto">
+                            <label for="upload-file-form" class="settings-avatar">Avatar</label>
+                        </div>
+                        <div class="col-auto">
+                            <input type="file" class="form-control upload" id="upload-file-form"
+                                   aria-label="file example">
+                            <div class="invalid-feedback">Invalid form file!</div>
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="col-12">
+                        <button class="btn btn-success" type="submit">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

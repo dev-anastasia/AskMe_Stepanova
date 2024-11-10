@@ -1,0 +1,77 @@
+{% extends 'base_unlogined.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-9">
+            <div class="d-flex flex-column gap-3">
+
+                <!-- Код ниже не берётся из шаблона, т.к. он отличается от стандартного шаблона вопроса! Так и задумано!:) -->
+                <article class="main-answer">
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="border mb-2" style="height: 100px">
+                                <img alt="Avatar" class="img-fluid" src="{% static 'img/duck.jpg' %}">
+                            </div>
+                            <input aria-label="default input example" class="form-control"
+                                   placeholder="Default input" type="number"
+                                   value="5">
+                        </div>
+
+                        <div class="col-9">
+                            <h4 class="card-title">Question #{{item.id}}</h4>
+                            <p class="card-text">Thank you for asking my friend!.. {{item.text}}</p>
+
+                            <div class="d-flex gap-5">
+                                <div>
+                                    Tags:
+                                    <a class="card-link" href="#">black-jack</a>
+                                    <a class="card-link" href="#">bender</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <hr width="100%"/>
+
+                {% for answer in answers %}
+                {% include 'include/answer_templ.html' %}
+                {% endfor %}
+
+            </div>
+            <hr width="100%"/>
+
+            {% include 'include/pagination.html' %}
+
+            <div style="display: flex; flex-flow: row wrap;">
+                <textarea class="input-text" id="input-text" name="input-text"
+                          placeholder="Enter your answer here..."></textarea>
+                <br><br>
+                <div id="form-error-msg" class="invalid-feedback">Answer should not be empty!</div>
+            </div>
+            <br>
+
+            <button class="btn btn-success" type="submit" onclick="checkForm()">Answer</button>
+            <br>
+            <br>
+
+        </div>
+
+    <script>
+        function checkForm() {
+            if (document.getElementById('input-text').value.trim() === '') {
+                document.getElementById('form-error-msg').style.display = 'block';
+                return false;
+            } else {
+                document.getElementById('form-error-msg').style.display = 'none';
+                return true;
+            }
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous">
+
+    </script>
+        {% endblock %}
