@@ -1,4 +1,3 @@
-from django.core.paginator import Paginator
 from django.shortcuts import render
 
 QUESTIONS = [
@@ -14,7 +13,7 @@ HOT_QUESTIONS = [
         'id': i,
         'title': f'Hot question! {i}',
         'text': f'Question text {i}'
-    } for i in range(1, 15)
+    } for i in range(15)
 ]
 
 ANSWERS = [
@@ -22,19 +21,23 @@ ANSWERS = [
         'id': i,
         'title': f'Some answer! {i}',
         'text': f'Answer text {i}'
-    } for i in range(1, 15)
+    } for i in range(15)
 ]
 
 def index(request):
-    paginator = Paginator(QUESTIONS, 5)
-    page_num = request.GET.get('page', 1)
-    page_obj = paginator.get_page(page_num).object_list
-    return render(request, 'index.html',
-                  {'questions': QUESTIONS, 'page_obj_list': page_obj, 'page_obj': page_obj})
+    return render(request, 'index.html', {'questions': QUESTIONS})
 
 
 def question(request, question_id):
     return render(request, 'one_question.html', {'answers': ANSWERS, 'item': QUESTIONS[question_id]})
+
+
+def tag(request):
+    return render(request, 'tag.html', {'questions': QUESTIONS})
+
+
+def hot(request):
+    return render(request, 'hot.html', {'hot_questions': HOT_QUESTIONS})
 
 
 def settings(request):
@@ -52,10 +55,3 @@ def signup(request):
 def login(request):
     return render(request, 'login.html')
 
-
-def tag(request):
-    return render(request, 'tag.html', {'questions': QUESTIONS})
-
-
-def hot(request):
-    return render(request, 'hot.html', {'hot_questions': HOT_QUESTIONS})
