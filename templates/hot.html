@@ -12,7 +12,7 @@
 
         <div class="row">
             <div class="d-flex flex-column gap-3">
-                {% for question in hot_questions %}
+                {% for question in page_obj %}
                 {% include 'include/question_templ.html' with item=question %}
                 {% endfor %}
             </div>

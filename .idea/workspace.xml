@@ -7,9 +7,14 @@
     <list default="true" id="1092c4d6-b4db-4391-8bde-bd0a9696ea97" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base_logined.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base_logined.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base_unlogined.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base_unlogined.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/hot.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/hot.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/include/question_templ.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/include/question_templ.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/include/pagination.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/include/pagination.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/one_question.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/one_question.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/tag.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/tag.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

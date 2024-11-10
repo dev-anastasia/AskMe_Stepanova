@@ -9,8 +9,8 @@
 
         <div class="row">
             <div class="d-flex flex-column gap-3">
-                {% for question in questions %}
-                {% include 'include/question_templ.html' %}
+                {% for question in page_obj %}
+                {% include 'include/question_templ.html' with item=question %}
                 {% endfor %}
             </div>
 

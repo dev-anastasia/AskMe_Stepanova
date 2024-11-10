@@ -84,6 +84,11 @@
             width: 100px;
             height: 100px;
         }
+
+        .current {
+            margin-left: 50px;
+            margin-right: 50px;
+        }
     </style>
 </head>
 
@@ -93,7 +98,7 @@
         <div class="d-flex w-100 justify-content-between align-items-center">
 
             <div class="d-flex gap-1">
-                <a class="navbar-brand" href="#">AskStepanova</a>
+                <a class="navbar-brand" href="{% url 'index' %}">AskStepanova</a>
                 <input aria-label="Search" class="form-control me-2" placeholder="Search" type="search">
             </div>
 
@@ -108,8 +113,8 @@
                         ana stepanova
                     </div>
                     <div class="top-left">
-                        <a class="settings-link" href="#">settings</a>
-                        <a href="#">log out</a>
+                        <a class="settings-link" href="{% url 'settings' %}">settings</a>
+                        <a href="{% url 'index' %}">log out</a>
                     </div>
                 </div>
             </div>

@@ -6,7 +6,6 @@
         <div class="col-9">
             <div class="d-flex flex-column gap-3">
 
-                <!-- Код ниже не берётся из шаблона, т.к. он отличается от стандартного шаблона вопроса! Так и задумано!:) -->
                 <article class="main-answer">
                     <div class="row">
                         <div class="col-3">
@@ -25,8 +24,8 @@
                             <div class="d-flex gap-5">
                                 <div>
                                     Tags:
-                                    <a class="card-link" href="#">black-jack</a>
-                                    <a class="card-link" href="#">bender</a>
+                                    <a class="card-link" href="{% url 'tag' %}">black-jack</a>
+                                    <a class="card-link" href="{% url 'tag' %}">bender</a>
                                 </div>
                             </div>
                         </div>
@@ -34,7 +33,7 @@
                 </article>
                 <hr width="100%"/>
 
-                {% for answer in answers %}
+                {% for answer in page_obj %}
                 {% include 'include/answer_templ.html' %}
                 {% endfor %}
 
